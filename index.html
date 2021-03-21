@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("logo.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: 300px 300px;
+        }
+
+        div {
+            background: rgba(255, 232, 232, 0.3); 
+            border: 2px solid pink;
+            border-radius: 8px;
+            margin-right: 200px;
+            margin-left: 200px;
+            margin-top: 70px;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;            
+        }
+
+        a:link{
+            color:darkslategray;
+        }
+
+        a:visited{
+            color:darkolivegreen;
+        }
+
+
+        table {
+            background: rgba(255,232,232,0.8);
+            align-self: center;
+            border: 2px solid pink;
+            border-radius: 8px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        button, select {
+            background: rgba(255,232,232,1);
+            border: 2px solid pink;
+            border-radius: 8px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Virtual Studio Class Selector</h1><br /><br />
+        <!-- Practice Type Filter Dropdown -->
+        <label for="PracticeType">Practice Type:</label>
+        <select name="PracticeType" id="PracticeTypeList">
+            <option value=[\s\S]*>All Class Types</option>
+            <option value="Vinyasa">Vinyasa</option>
+            <option value="Slow Flow">Slow Flow</option>
+            <option value="Restorative">Restorative</option>
+            <option value="Yoga Nidra">Yoga Nidra</option>
+            <option value=Buti\s*\S*.*>Any Buti</option>
+            <option value="Buti">Buti</option>
+            <option value="Buti Express">Buti Express</option>
+            <option value="Buti Deep">Buti Deep</option>
+            <option value="Buti Bands">Buti Bands</option>
+            <option value="Buti Flow">Buti Flow</option>
+            <option value="Buti Sculpt">Buti Sculpt</option>
+            <option value="Buti Hotcore">Buti Hotcore</option>
+            <option value="Barre">Barre</option>
+            <option value="Meditation">Meditation</option>
+            <option value="Pranayama">Pranayama</option>
+            <option value="Stretches">Stretches</option>
+            <option value="Tutorial">Tutorial</option>
+            <option value="Yoga Chat">Yoga Chat</option>
+        </select>
+
+        <!-- Practice Length Filter Dropdown -->
+        <label for="PracticeLength">Practice Length:</label>
+        <select name="PracticeLength" id="PracticeLengthList">
+            <option value=[\s\S]*>All Lengths</option>
+            <option value="5">5 Minutes</option>
+            <option value="10">10 Minutes</option>
+            <option value="15">15 Minutes</option>
+            <option value="20">20 Minutes</option>
+            <option value="30">30 Minutes</option>
+            <option value="35">35 Minutes</option>
+            <option value="40">40 Minutes</option>
+            <option value="45">45 Minutes</option>
+            <option value="50">50 Minutes</option>
+            <option value="55">55 Minutes</option>
+            <option value="60">60 Minutes</option>
+            <option value="65">65 Minutes</option>
+            <option value="75">75 Minutes</option>
+        </select>
+
+        <!-- Instructor Filter Dropdown -->
+        <label for="Instructor">Instructor:</label>
+        <select name="Instructor" id="InstructorList">
+            <option value=[\s\S]*>All Instructors</option>
+            <option value="Adri">Adri</option>
+            <option value="Brittany">Brittany</option>
+            <option value="Chelsea">Chelsea</option>
+            <option value="Danea">Danea</option>
+            <option value="Haley">Haley</option>
+            <option value="Karolina">Karolina</option>
+            <option value="Kathleen">Kathleen</option>
+            <option value="Lyric">Lyric</option>
+            <option value="Megan">Megan</option>
+            <option value="Stefanie">Stefanie</option>
+            <option value="The Barre Code">The Barre Code</option>
+        </select>
+
+        <!-- Format Filter Dropdown -->
+        <label for="Format">Format:</label>
+        <select name="Formmat" id="FormatList">
+            <option value=[\s\S]*>All Formats</option>
+            <option value="Audio">Audio</option>
+            <option value="Video">Video</option>
+        </select>
+
+        <!-- Submit Button -->
+        <p><button onclick="displayFilteredClasses()">Let's Practice!</button><br /><br /><button onclick="getRandomClass()">Pick a Random Class!</button></p>
+
+        <!-- Table Placeholder -->
+        <table id="demo" border="1" align="center">
+            <tr><th>Title</th><th>Length</th><th>Instructor</th><th>Type</th><th>Format</th></tr>
+        </table>
+
+    </div>
+
+    <!-- Script Begins -->
+    <script>
+
+        function getRandomClass() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    randomClassTable(this);
+                }
+            };
+            xmlhttp.open("GET", "library.xml", true);
+            xmlhttp.send();
+        }
+
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+        }
+
+        function randomClassTable(xml) {
+            var xmlDoc, table, i, practice
+            xmlDoc = xml.responseXML;
+            table = "<tr><th>Title</th><th>Length</th><th>Instructor</th><th>Type</th><th>Format</th></tr>";
+            practice = xmlDoc.getElementsByTagName("practice");
+            i = getRandomInt(practice.length);
+            var link = practice[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+            var title = practice[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            var length = practice[i].getElementsByTagName("length")[0].childNodes[0].nodeValue;
+            var instructor = practice[i].getElementsByTagName("instructor")[0].childNodes[0].nodeValue;
+            var type = practice[i].getElementsByTagName("type")[0].childNodes[0].nodeValue;
+            var format = practice[i].getElementsByTagName("format")[0].childNodes[0].nodeValue;
+
+            table += "<tr><td><a href=\"" +
+                link +
+                "\">" +
+                title +
+                "</a></td><td>" +
+                length +
+                "</td><td>" +
+                instructor +
+                "</td><td>" +
+                type +
+                "</td><td>" +
+                format +
+                "</td></tr>";
+
+            document.getElementById("demo").innerHTML = table;
+
+        }
+
+        function displayFilteredClasses() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    BuildTable(this);
+                }
+            };
+            xmlhttp.open("GET", "library.xml", true);
+            xmlhttp.send();
+        }
+
+        function BuildTable(xml) {
+            var practice, i, xmlDoc, table, typeList, lengthList, instructorList, formatList, chosenType, chosenLength, chosenInstructor, chosenFormat;
+
+            xmlDoc = xml.responseXML;
+            table = "<tr><th>Title</th><th>Length</th><th>Instructor</th><th>Type</th><th>Format</th></tr>";
+
+            practice = xmlDoc.getElementsByTagName("practice");
+
+            typeList = document.getElementById("PracticeTypeList");
+            chosenType = typeList.value;
+            lengthList = document.getElementById("PracticeLengthList");
+            chosenLength = lengthList.value;
+            instructorList = document.getElementById("InstructorList");
+            chosenInstructor = instructorList.value;
+            formatList = document.getElementById("FormatList");
+            chosenFormat = formatList.value;
+
+            for (i = 0; i < practice.length; i++) {
+
+                var link = practice[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+                var title = practice[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                var length = practice[i].getElementsByTagName("length")[0].childNodes[0].nodeValue;
+                var instructor = practice[i].getElementsByTagName("instructor")[0].childNodes[0].nodeValue;
+                var type = practice[i].getElementsByTagName("type")[0].childNodes[0].nodeValue;
+                var format = practice[i].getElementsByTagName("format")[0].childNodes[0].nodeValue;
+
+                if (type.match(chosenType) && length.match(chosenLength) && instructor.match(chosenInstructor) && format.match(chosenFormat)) {
+
+                    table += "<tr><td><a href=\"" +
+                        link +
+                        "\">" +
+                        title +
+                        "</a></td><td>" +
+                        length +
+                        "</td><td>" +
+                        instructor +
+                        "</td><td>" +
+                        type +
+                        "</td><td>" +
+                        format +
+                        "</td></tr>";
+                }
+            }
+            document.getElementById("demo").innerHTML = table;
+        }
+    </script>
+
+</body>
+</html>
