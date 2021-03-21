@@ -72,7 +72,7 @@
         <label for="PracticeLength">Practice Length:</label>
         <select name="PracticeLength" id="PracticeLengthList">
             <option value=[\s\S]*>All Lengths</option>
-            <option value="5">5 Minutes</option>
+            <option value=^5{1}$>5 Minutes</option>
             <option value="10">10 Minutes</option>
             <option value="15">15 Minutes</option>
             <option value="20">20 Minutes</option>
@@ -119,20 +119,56 @@
         <table id="demo" border="1" align="center">
         </table>
 
-        <p><h6>All classes created by Kula Yoga in Grand Rapids, MI.</h6><br\>
-        <h6>Patreon subscription is required to access classes.</h6></br\>
-        <h6>I do not own this class content. Website solely for personal use to help myself pick out a class.</h6></p>
+        <p>
+            <h6>All classes created by Kula Yoga in Grand Rapids, MI.</h6><br\>
+                <h6>Patreon subscription is required to access classes.</h6>
+            </br\>
+            <h6>I do not own this class content. Website solely for personal use to help myself pick out a class.</h6>
+        </p>
 
     </div>
 
     <!-- Script Begins -->
     <script>
 
+        function buildClassList(xml) {
+            var i;
+            var practices = [];
+            var xmlDoc = xml.responseXML;
+            var practice = xmlDoc.getElementsByTagName("practice");
+            var typeList = document.getElementById("PracticeTypeList");
+            var chosenType = typeList.value;
+            var lengthList = document.getElementById("PracticeLengthList");
+            var chosenLength = lengthList.value;
+            var instructorList = document.getElementById("InstructorList");
+            var chosenInstructor = instructorList.value;
+            var formatList = document.getElementById("FormatList");
+            var chosenFormat = formatList.value;
+
+            for (i = 0; i < practice.length; i++) {
+
+                var link = practice[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+                var title = practice[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                var length = practice[i].getElementsByTagName("length")[0].childNodes[0].nodeValue;
+                var instructor = practice[i].getElementsByTagName("instructor")[0].childNodes[0].nodeValue;
+                var type = practice[i].getElementsByTagName("type")[0].childNodes[0].nodeValue;
+                var format = practice[i].getElementsByTagName("format")[0].childNodes[0].nodeValue;
+
+                if (type.match(chosenType) && length.match(chosenLength) && instructor.match(chosenInstructor) && format.match(chosenFormat)) {
+                    practices.push([link, title, length, instructor, type, format])
+
+                }
+
+            }
+            return practices;
+        }
+
         function getRandomClass() {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    randomClassTable(this);
+                    var classList = buildClassList(this);
+                    randomClassTable(classList);
                 }
             };
             xmlhttp.open("GET", "library.xml", true);
@@ -143,18 +179,17 @@
             return Math.floor(Math.random() * Math.floor(max));
         }
 
-        function randomClassTable(xml) {
-            var xmlDoc, table, i, practice
-            xmlDoc = xml.responseXML;
+        function randomClassTable(currentClassList) {
+            var table, i
             table = "<tr><th>Title</th><th>Length</th><th>Instructor</th><th>Type</th><th>Format</th></tr>";
-            practice = xmlDoc.getElementsByTagName("practice");
-            i = getRandomInt(practice.length);
-            var link = practice[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
-            var title = practice[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-            var length = practice[i].getElementsByTagName("length")[0].childNodes[0].nodeValue;
-            var instructor = practice[i].getElementsByTagName("instructor")[0].childNodes[0].nodeValue;
-            var type = practice[i].getElementsByTagName("type")[0].childNodes[0].nodeValue;
-            var format = practice[i].getElementsByTagName("format")[0].childNodes[0].nodeValue;
+            i = getRandomInt(currentClassList.length);
+
+            var link = currentClassList[i][0];
+            var title = currentClassList[i][1];
+            var length = currentClassList[i][2];
+            var instructor = currentClassList[i][3];
+            var type = currentClassList[i][4];
+            var format = currentClassList[i][5];
 
             table += "<tr><td><a href=\"" +
                 link +
@@ -178,56 +213,42 @@
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
-                    BuildTable(this);
+                    var classList = buildClassList(this);
+                    filteredClassesTable(classList);
                 }
             };
             xmlhttp.open("GET", "library.xml", true);
             xmlhttp.send();
         }
 
-        function BuildTable(xml) {
-            var practice, i, xmlDoc, table, typeList, lengthList, instructorList, formatList, chosenType, chosenLength, chosenInstructor, chosenFormat;
-
-            xmlDoc = xml.responseXML;
+        function filteredClassesTable(currentClassList) {
+            var table, i, j, link, title, length, instructor, type, format;
             table = "<tr><th>Title</th><th>Length</th><th>Instructor</th><th>Type</th><th>Format</th></tr>";
+           
+            for (i = 0; i < currentClassList.length; i++) {
 
-            practice = xmlDoc.getElementsByTagName("practice");
+                var innerArrayLength = currentClassList[i].length;
+                table += "<tr><td><a href=\""
 
-            typeList = document.getElementById("PracticeTypeList");
-            chosenType = typeList.value;
-            lengthList = document.getElementById("PracticeLengthList");
-            chosenLength = lengthList.value;
-            instructorList = document.getElementById("InstructorList");
-            chosenInstructor = instructorList.value;
-            formatList = document.getElementById("FormatList");
-            chosenFormat = formatList.value;
+                for (j = 0; j < innerArrayLength; j++) {
 
-            for (i = 0; i < practice.length; i++) {
+                    data = currentClassList[i][j];
 
-                var link = practice[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
-                var title = practice[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
-                var length = practice[i].getElementsByTagName("length")[0].childNodes[0].nodeValue;
-                var instructor = practice[i].getElementsByTagName("instructor")[0].childNodes[0].nodeValue;
-                var type = practice[i].getElementsByTagName("type")[0].childNodes[0].nodeValue;
-                var format = practice[i].getElementsByTagName("format")[0].childNodes[0].nodeValue;
+                    if (j == 0) {
+                        table += data;
+                    }
+                    else if (j == 1) {
+                        table += "\">" + data + "</a></td>";
+                    }
 
-                if (type.match(chosenType) && length.match(chosenLength) && instructor.match(chosenInstructor) && format.match(chosenFormat)) {
+                    else {
+                       table += "<td>" + data + "</td>";
+                    }
 
-                    table += "<tr><td><a href=\"" +
-                        link +
-                        "\">" +
-                        title +
-                        "</a></td><td>" +
-                        length +
-                        "</td><td>" +
-                        instructor +
-                        "</td><td>" +
-                        type +
-                        "</td><td>" +
-                        format +
-                        "</td></tr>";
                 }
+                table += "</tr>";
             }
+
             document.getElementById("demo").innerHTML = table;
         }
     </script>
