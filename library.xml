@@ -2576,4 +2576,52 @@
     <type>Vinyasa</type>
     <format>Audio</format>
   </practice>
+  <practice>
+    <link>https://butiyoga.com/pages/kulayoga</link>
+    <title>Express Buti DEEP w/ Danea</title>
+    <instructor>Danea</instructor>
+    <length>30</length>
+    <type>Buti Deep</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/barre-with-barre-49984859</link>
+    <title>Barre w/The Barre Code 4</title>
+    <instructor>The Barre Code</instructor>
+    <length>30</length>
+    <type>Barre</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/slow-flow-with-49288880</link>
+    <title>Slow Flow with a Strap w/Kathleen</title>
+    <instructor>Kathleen</instructor>
+    <length>45</length>
+    <type>Slow Flow</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-49307435</link>
+    <title>Twisting and Upper Body Vinyasa w/Megan</title>
+    <instructor>Megan</instructor>
+    <length>45</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/slow-flow-with-49306949</link>
+    <title>Focus your Dristhi w/Chelsea</title>
+    <instructor>Chelsea</instructor>
+    <length>50</length>
+    <type>Slow Flow</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-49288721</link>
+    <title>Vinyasa w/ Brittany</title>
+    <instructor>Brittany</instructor>
+    <length>30</length>
+    <type>Vinyasa</type>
+    <format>Video</format>
+  </practice>
 </YogaLibrary>
