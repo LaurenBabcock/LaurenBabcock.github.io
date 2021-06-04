@@ -2776,4 +2776,36 @@
     <type>Barre</type>
     <format>Video</format>
   </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-50771988</link>
+    <title>Vinyasa w/Brittany</title>
+    <instructor>Brittany</instructor>
+    <length>30</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-50772096</link>
+    <title>Hamstring Length Vinyasa w/Megan</title>
+    <instructor>Megan</instructor>
+    <length>55</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/yin-yoga-with-50772674</link>
+    <title>Lower Body Focus Yin Yoga w/ Danea</title>
+    <instructor>Danea</instructor>
+    <length>50</length>
+    <type>Yin</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/yogachat-chakra-51820508</link>
+    <title>YogaChats: Muladhara Chakra</title>
+    <instructor>Megan</instructor>
+    <length>15</length>
+    <type>Yoga Chat</type>
+    <format>Audio</format>
+  </practice>
 </YogaLibrary>
