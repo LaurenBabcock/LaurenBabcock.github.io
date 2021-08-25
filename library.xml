@@ -3168,4 +3168,20 @@
     <type>Buti</type>
     <format>Video</format>
   </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/slow-flow-yoga-54275134</link>
+    <title>Slow Flow + Yoga Nidra w/Lyric</title>
+    <instructor>Lyric</instructor>
+    <length>75</length>
+    <type>Slow Flow</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/yogachat-chakra-54276332</link>
+    <title>YogaChats: Sahasrara Chakra</title>
+    <instructor>Megan</instructor>
+    <length>10</length>
+    <type>Yoga Chat</type>
+    <format>Audio</format>
+  </practice>
 </YogaLibrary>
