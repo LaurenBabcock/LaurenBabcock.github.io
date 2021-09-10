@@ -3224,4 +3224,36 @@
     <type>Vinyasa</type>
     <format>Audio</format>
   </practice>
+  <practice>
+    <link>https://butiyoga.com/pages/kulayoga</link>
+    <title>Buti Flow with Brittany 2</title>
+    <instructor>Brittany</instructor>
+    <length>40</length>
+    <type>Buti Flow</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-55390488</link>
+    <title>Balance Focus Vinyasa w/Lyric</title>
+    <instructor>Lyric</instructor>
+    <length>45</length>
+    <type>Vinyasa</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/work-break-yoga-55391194</link>
+    <title>Work Break Yoga Nidra w/Danea</title>
+    <instructor>Danea</instructor>
+    <length>10</length>
+    <type>Yoga Nidra</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-55308789</link>
+    <title>Well Rounded Vinyasa w/Brittany</title>
+    <instructor>Brittany</instructor>
+    <length>35</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
 </YogaLibrary>
