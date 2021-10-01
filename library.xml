@@ -3293,7 +3293,47 @@
     <title>Throat Chakra Vinyasa w/ Chelsea</title>
     <instructor>Chelsea</instructor>
     <length>45</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/slow-flow-with-55307689</link>
+    <title>Spine Health Slow Flow w/Lyric</title>
+    <instructor>Lyric</instructor>
+    <length>30</length>
     <type>Slow Flow</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-55308641</link>
+    <title>Hips + Hamstrings Vinyasa w/Danea</title>
+    <instructor>Danea</instructor>
+    <length>50</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/upper-body-slow-55309342</link>
+    <title>Upper Body Slow Flow w/Kathleen</title>
+    <instructor>Kathleen</instructor>
+    <length>50</length>
+    <type>Slow Flow</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/restorative-yoga-55307889</link>
+    <title>Restorative w/Danea</title>
+    <instructor>Danea</instructor>
+    <length>60</length>
+    <type>Restorative</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/guided-mudra-56754818</link>
+    <title>Padma Mudra Meditation w/Danea</title>
+    <instructor>Danea</instructor>
+    <length>10</length>
+    <type>Meditation</type>
     <format>Audio</format>
   </practice>
 </YogaLibrary>
