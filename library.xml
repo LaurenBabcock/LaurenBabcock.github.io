@@ -3392,4 +3392,44 @@
     <type>Vinyasa</type>
     <format>Audio</format>
   </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/simple-yoga-with-57073849</link>
+    <title>Simple Restorative w/Danea</title>
+    <instructor>Danea</instructor>
+    <length>50</length>
+    <type>Restorative</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/guided-mudra-and-56998900</link>
+    <title>Matangi and Shiva Linga Mudra Meditation w/Danea</title>
+    <instructor>Danea</instructor>
+    <length>10</length>
+    <type>Meditation</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/slow-flow-with-56757300</link>
+    <title>Slow Flow w/Tarryn</title>
+    <instructor>Tarryn</instructor>
+    <length>60</length>
+    <type>Slow Flow</type>
+    <format>Audio</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/vinyasa-with-56755967</link>
+    <title>Well Rounded Vinyasa w/Chelsea</title>
+    <instructor>Chelsea</instructor>
+    <length>45</length>
+    <type>Vinyasa</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/basic-slow-flow-56757535</link>
+    <title>Basic Slow Flow w/Haley</title>
+    <instructor>Haley</instructor>
+    <length>30</length>
+    <type>Slow Flow</type>
+    <format>Audio</format>
+  </practice>
 </YogaLibrary>
