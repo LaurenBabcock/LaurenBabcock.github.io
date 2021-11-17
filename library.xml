@@ -3432,4 +3432,28 @@
     <type>Slow Flow</type>
     <format>Audio</format>
   </practice>
+  <practice>
+    <link>https://butiyoga.com/pages/kulayoga</link>
+    <title>Extended Buti Yoga with Danea</title>
+    <instructor>Danea</instructor>
+    <length>90</length>
+    <type>Buti</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/full-body-guided-57083005</link>
+    <title>Full Body Guided Stretch w/Kathleen</title>
+    <instructor>Kathleen</instructor>
+    <length>30</length>
+    <type>Stretches</type>
+    <format>Video</format>
+  </practice>
+  <practice>
+    <link>https://www.patreon.com/posts/heart-chakra-56757782</link>
+    <title>Heart Chakra Vinyasa w/Lyric</title>
+    <instructor>Lyric</instructor>
+    <length>45</length>
+    <type>Vinyasa</type>
+    <format>Audio</format>
+  </practice>
 </YogaLibrary>
